@@ -1,6 +1,6 @@
 # Factory Anatomy
 
-整车厂冲焊涂总等车间的 **等轴测交互 SVG / HTML** 作品集，用于演示、短视频与方案讲解。
+整车厂冲焊涂总等车间的 **等轴测交互 SVG / HTML** 作品集，用于演示与方案讲解。
 
 基于 [Anatomy](https://github.com/wheresryan22/anatomy) isometric SVG skill（MIT）的独立展示仓，非上游 fork。
 
