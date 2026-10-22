@@ -12,7 +12,6 @@
 | **焊装** Body Shop | <img src="docs/gallery/02-bodyshop.png" width="320" alt="焊装车间"> | BIW 总览 |
 | **涂装** Paint Shop | <img src="docs/gallery/03-paintshop.png" width="320" alt="涂装车间"> | 三层：电泳 / 面漆 / 精修 |
 | **总装** Assembly Shop | <img src="docs/gallery/04-assembly-nev.png" width="320" alt="总装总览"> | 整体合装 · 双主线 · 板链 |
-| 总装细节 | <img src="docs/gallery/04c-assembly-dual.png" width="150" alt="双线"> <img src="docs/gallery/04b-assembly-plate.png" width="150" alt="板链"> <img src="docs/gallery/04d-assembly-workers.png" width="150" alt="作业"> | 双线 · 板链密接 · 线上作业 |
 | **电池包** Battery Pack | <img src="docs/gallery/05-battery-pack.png" width="320" alt="电池包"> | Pack 线 |
 
 ## What’s inside
