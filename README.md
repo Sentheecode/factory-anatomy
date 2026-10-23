@@ -4,6 +4,8 @@
 
 基于 [Anatomy](https://github.com/wheresryan22/anatomy) isometric SVG skill（MIT）的独立展示仓，非上游 fork。
 
+**Live site:** [https://sentheecode.github.io/factory-anatomy/](https://sentheecode.github.io/factory-anatomy/) — 浏览画廊并打开各场景交互 HTML。
+
 ## Gallery
 
 | 场景 | 预览 | 说明 |
