@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Factory Anatomy — 整车厂车间交互图库</title>
+  <meta name="description" content="冲焊涂总、电池包、电驱车间等轴测交互 SVG / HTML 作品集">
+  <link
+    rel="preload"
+    as="image"
+    href="docs/gallery/thumbs/01-stamping-960.webp"
+    imagesrcset="docs/gallery/thumbs/01-stamping-640.webp 640w, docs/gallery/thumbs/01-stamping-960.webp 960w"
+    imagesizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+    fetchpriority="high"
+  >
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --text: #1a1d21;
+      --muted: #5c6570;
+      --border: #e2e6eb;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 42rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    header a.repo {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    header a.repo:hover {
+      text-decoration: underline;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      border-color: #c5cdd8;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .card:nth-child(n + 3) {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 380px;
+    }
+
+    .card-thumb {
+      display: block;
+      aspect-ratio: 16 / 10;
+      background: #eef1f5;
+      overflow: hidden;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 1rem 1.1rem 1.15rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .card-title span.en {
+      display: block;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    .card-desc {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: var(--bg);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: #eef1f5;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Factory Anatomy</h1>
+      <p>
+        整车厂冲焊涂总等车间的等轴测交互 SVG / HTML 作品集。
+        基于 <a class="repo" href="https://github.com/wheresryan22/anatomy" rel="noopener">Anatomy</a> 视觉语言（MIT）。
+        源码：<a class="repo" href="https://github.com/Sentheecode/factory-anatomy" rel="noopener">Sentheecode/factory-anatomy</a>
+      </p>
+    </header>
+
+    <main class="grid" aria-label="场景画廊">
+      <article class="card">
+        <a class="card-thumb" href="figures/stamping-jier-line-light.html">
+          <img
+            src="docs/gallery/thumbs/01-stamping-960.webp"
+            srcset="docs/gallery/thumbs/01-stamping-640.webp 640w, docs/gallery/thumbs/01-stamping-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="冲压线预览"
+            decoding="async"
+            fetchpriority="high"
+          >
+        </a>
+        <div class="card-body">
+          <h2 class="card-title">冲压<span class="en">Press Shop</span></h2>
+          <p class="card-desc">五连冲压线 · AGV 下料</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="figures/stamping-jier-line-light.html">打开交互图 Open figure</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-thumb" href="figures/bodyshop-biw-desktop-light.html">
+          <img
+            src="docs/gallery/thumbs/02-bodyshop-960.webp"
+            srcset="docs/gallery/thumbs/02-bodyshop-640.webp 640w, docs/gallery/thumbs/02-bodyshop-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="焊装车间预览"
+            decoding="async"
+            loading="lazy"
+          >
+        </a>
+        <div class="card-body">
+          <h2 class="card-title">焊装<span class="en">Body Shop</span></h2>
+          <p class="card-desc">BIW 白车身总览</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="figures/bodyshop-biw-desktop-light.html">打开交互图 Open figure</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-thumb" href="figures/paintshop-3f-desktop-light.html">
+          <img
+            src="docs/gallery/thumbs/03-paintshop-960.webp"
+            srcset="docs/gallery/thumbs/03-paintshop-640.webp 640w, docs/gallery/thumbs/03-paintshop-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="涂装车间预览"
+            decoding="async"
+            loading="lazy"
+          >
+        </a>
+        <div class="card-body">
+          <h2 class="card-title">涂装<span class="en">Paint Shop</span></h2>
+          <p class="card-desc">三层：电泳 / 面漆 / 精修</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="figures/paintshop-3f-desktop-light.html">打开交互图 Open figure</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-thumb" href="figures/assembly-nev-desktop-light.html">
+          <img
+            src="docs/gallery/thumbs/04-assembly-nev-960.webp"
+            srcset="docs/gallery/thumbs/04-assembly-nev-640.webp 640w, docs/gallery/thumbs/04-assembly-nev-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="总装车间预览"
+            decoding="async"
+            loading="lazy"
+          >
+        </a>
+        <div class="card-body">
+          <h2 class="card-title">总装<span class="en">Assembly Shop</span></h2>
+          <p class="card-desc">整体合装 · 双主线 · 板链</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="figures/assembly-nev-desktop-light.html">打开交互图 Open figure</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-thumb" href="figures/battery-pack-line-light.html">
+          <img
+            src="docs/gallery/thumbs/05-battery-pack-960.webp"
+            srcset="docs/gallery/thumbs/05-battery-pack-640.webp 640w, docs/gallery/thumbs/05-battery-pack-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="电池包线预览"
+            decoding="async"
+            loading="lazy"
+          >
+        </a>
+        <div class="card-body">
+          <h2 class="card-title">电池包<span class="en">Battery Pack</span></h2>
+          <p class="card-desc">Pack 装配线</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="figures/battery-pack-line-light.html">打开交互图 Open figure</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-thumb" href="figures/edu-drive-desktop-light.html">
+          <img
+            src="docs/gallery/thumbs/06-eds-960.webp"
+            srcset="docs/gallery/thumbs/06-eds-640.webp 640w, docs/gallery/thumbs/06-eds-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="电驱车间预览"
+            decoding="async"
+            loading="lazy"
+          >
+        </a>
+        <div class="card-body">
+          <h2 class="card-title">电驱车间<span class="en">Electric Drive Shop (EDS)</span></h2>
+          <p class="card-desc">电驱车间总览</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="figures/edu-drive-desktop-light.html">车间总览 Shop overview</a>
+            <a class="btn btn-secondary" href="figures/edu-drive-unit-light.html">三合一爆炸图 Unit explode</a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>
+        Visual kit: <a href="https://github.com/wheresryan22/anatomy" rel="noopener">wheresryan22/anatomy</a> (MIT) ·
+        Scenes: Senthee / 吴斌 &amp; assistants (2026)
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
