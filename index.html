@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Factory Anatomy — 整车厂车间交互图库</title>
   <meta name="description" content="冲焊涂总、电池包、电驱车间等轴测交互 SVG / HTML 作品集">
+  <link
+    rel="preload"
+    as="image"
+    href="docs/gallery/thumbs/01-stamping-960.webp"
+    imagesrcset="docs/gallery/thumbs/01-stamping-640.webp 640w, docs/gallery/thumbs/01-stamping-960.webp 960w"
+    imagesizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+    fetchpriority="high"
+  >
   <style>
     :root {
       --bg: #f6f7f9;
@@ -84,6 +92,11 @@
     .card:hover {
       border-color: #c5cdd8;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .card:nth-child(n + 3) {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 380px;
     }
 
     .card-thumb {
@@ -201,7 +214,16 @@
     <main class="grid" aria-label="场景画廊">
       <article class="card">
         <a class="card-thumb" href="figures/stamping-jier-line-light.html">
-          <img src="docs/gallery/01-stamping.png" width="640" height="400" alt="冲压线预览">
+          <img
+            src="docs/gallery/thumbs/01-stamping-960.webp"
+            srcset="docs/gallery/thumbs/01-stamping-640.webp 640w, docs/gallery/thumbs/01-stamping-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="冲压线预览"
+            decoding="async"
+            fetchpriority="high"
+          >
         </a>
         <div class="card-body">
           <h2 class="card-title">冲压<span class="en">Press Shop</span></h2>
@@ -214,7 +236,16 @@
 
       <article class="card">
         <a class="card-thumb" href="figures/bodyshop-biw-desktop-light.html">
-          <img src="docs/gallery/02-bodyshop.png" width="640" height="400" alt="焊装车间预览">
+          <img
+            src="docs/gallery/thumbs/02-bodyshop-960.webp"
+            srcset="docs/gallery/thumbs/02-bodyshop-640.webp 640w, docs/gallery/thumbs/02-bodyshop-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="焊装车间预览"
+            decoding="async"
+            loading="lazy"
+          >
         </a>
         <div class="card-body">
           <h2 class="card-title">焊装<span class="en">Body Shop</span></h2>
@@ -227,7 +258,16 @@
 
       <article class="card">
         <a class="card-thumb" href="figures/paintshop-3f-desktop-light.html">
-          <img src="docs/gallery/03-paintshop.png" width="640" height="400" alt="涂装车间预览">
+          <img
+            src="docs/gallery/thumbs/03-paintshop-960.webp"
+            srcset="docs/gallery/thumbs/03-paintshop-640.webp 640w, docs/gallery/thumbs/03-paintshop-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="涂装车间预览"
+            decoding="async"
+            loading="lazy"
+          >
         </a>
         <div class="card-body">
           <h2 class="card-title">涂装<span class="en">Paint Shop</span></h2>
@@ -240,7 +280,16 @@
 
       <article class="card">
         <a class="card-thumb" href="figures/assembly-nev-desktop-light.html">
-          <img src="docs/gallery/04-assembly-nev.png" width="640" height="400" alt="总装车间预览">
+          <img
+            src="docs/gallery/thumbs/04-assembly-nev-960.webp"
+            srcset="docs/gallery/thumbs/04-assembly-nev-640.webp 640w, docs/gallery/thumbs/04-assembly-nev-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="总装车间预览"
+            decoding="async"
+            loading="lazy"
+          >
         </a>
         <div class="card-body">
           <h2 class="card-title">总装<span class="en">Assembly Shop</span></h2>
@@ -253,7 +302,16 @@
 
       <article class="card">
         <a class="card-thumb" href="figures/battery-pack-line-light.html">
-          <img src="docs/gallery/05-battery-pack.png" width="640" height="400" alt="电池包线预览">
+          <img
+            src="docs/gallery/thumbs/05-battery-pack-960.webp"
+            srcset="docs/gallery/thumbs/05-battery-pack-640.webp 640w, docs/gallery/thumbs/05-battery-pack-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="电池包线预览"
+            decoding="async"
+            loading="lazy"
+          >
         </a>
         <div class="card-body">
           <h2 class="card-title">电池包<span class="en">Battery Pack</span></h2>
@@ -266,7 +324,16 @@
 
       <article class="card">
         <a class="card-thumb" href="figures/edu-drive-desktop-light.html">
-          <img src="docs/gallery/06-eds.png" width="640" height="400" alt="电驱车间预览">
+          <img
+            src="docs/gallery/thumbs/06-eds-960.webp"
+            srcset="docs/gallery/thumbs/06-eds-640.webp 640w, docs/gallery/thumbs/06-eds-960.webp 960w"
+            sizes="(max-width: 680px) calc(100vw - 2.5rem), (max-width: 1040px) calc(50vw - 2rem), 340px"
+            width="960"
+            height="540"
+            alt="电驱车间预览"
+            decoding="async"
+            loading="lazy"
+          >
         </a>
         <div class="card-body">
           <h2 class="card-title">电驱车间<span class="en">Electric Drive Shop (EDS)</span></h2>
