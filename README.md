@@ -31,6 +31,13 @@
 
 > 大体积 HTML 在 `figures/`。快速浏览用上表截图；要看动画请在桌面浏览器打开 HTML。
 
+## 联系 / Contact
+
+- **Email:** senthee62@163.com
+- **定制咨询：** 工厂 / 产线工艺可视化、方案配图、培训与投标材料。邮件里写明场景（哪个车间、哪台设备）、用途、尺寸、交付格式即可。
+- **商业授权：** 仓库代码与图采用 MIT，可商用（保留版权声明）。需要独占授权或署名豁免请邮件联系。
+- **想看别的场景：** 到 [Discussions](https://github.com/Sentheecode/factory-anatomy/discussions) 提，按需求排期。
+
 ## Credits
 
 - Visual language & kit: [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) (MIT)
